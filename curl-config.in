@@ -141,7 +141,7 @@ while test "$#" -gt 0; do
     ;;
 
   --cflags)
-    if test "X@includedir@" = 'X/usr/include'; then
+    if test "@includedir@" = '/usr/include'; then
       echo '@LIBCURL_PC_CFLAGS@'
     else
       echo "@LIBCURL_PC_CFLAGS@ -I@includedir@"
@@ -149,7 +149,7 @@ while test "$#" -gt 0; do
     ;;
 
   --libs)
-    if test "X@libdir@" != 'X/usr/lib' -a "X@libdir@" != 'X/usr/lib64'; then
+    if test "@libdir@" != '/usr/lib' -a "@libdir@" != '/usr/lib64'; then
       curllibdir="-L@libdir@ "
     else
       curllibdir=''
